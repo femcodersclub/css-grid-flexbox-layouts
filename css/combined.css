@@ -1,0 +1,251 @@
+/* 
+ * combined.css - Combinación de Grid y Flexbox
+ * FemCoders Club - Grid + Flexbox Layouts
+ * 
+ * Este archivo muestra ejemplos específicos donde Grid y Flexbox
+ * se utilizan juntos en el mismo componente para aprovechar
+ * las fortalezas de cada uno.
+ */
+
+/*
+ * ESTRATEGIA 1: Grid para estructura macro, Flexbox para componentes internos
+ */
+
+/* Header: Grid para estructura, Flexbox para navegación */
+.site-header {
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* 
+ * ESTRATEGIA 2: Grid para posicionamiento asimétrico, Flexbox para alineación interna
+ */
+
+/* Ejemplo de tarjeta: Grid para estructura, Flexbox para contenido */
+.example-card.large {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image content";
+}
+
+.example-card.large .example-image {
+    grid-area: image;
+}
+
+.example-card.large .example-content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-lg);
+}
+
+/* 
+ * ESTRATEGIA 3: Grid con áreas nombradas y Flexbox para componentes
+ */
+
+/* Sección Hero avanzada con Grid areas y Flexbox */
+.hero {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    color: white;
+    padding: var(--space-xxl) 0;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+.hero-content h1 {
+    font-size: var(--font-size-xxxl);
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+}
+
+.hero-content p {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-lg);
+    opacity: 0.9;
+}
+
+/*
+ * ESTRATEGIA 4: Grid para responsividad automática, Flexbox para componentes
+ */
+
+/* Sistema de tarjetas con distribución automática */
+.features-grid {
+    /* Auto-fill para redistribución automática basada en tamaño */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+/*
+ * ESTRATEGIA 5: Componentes internos con una mezcla de Grid y Flexbox
+ */
+
+/* Formulario de contacto con combinación de técnicas */
+.contact-form-container {
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-lg);
+}
+
+/*
+ * Ajustes responsivos específicos para layouts combinados
+ */
+
+@media (max-width: 992px) {
+    .example-card.large {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Simplificación de layouts complejos para móviles */
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+    }
+    
+    .hero-image {
+        order: -1; /* Coloca la imagen antes del contenido en móviles */
+    }
+}
+
+/* 
+ * DEMOSTRACIÓN: Holy Grail Layout (Cabecera, Sidebar, Contenido, Footer)
+ * Un ejemplo clásico de layout para mostrar el poder de la combinación
+ */
+
+.holy-grail-demo {
+    /* El layout principal usa Grid */
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar content aside"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.holy-header {
+    grid-area: header;
+    /* El contenido del header usa Flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.holy-sidebar {
+    grid-area: sidebar;
+    background-color: var(--color-background-alt);
+    padding: var(--space-md);
+}
+
+.holy-content {
+    grid-area: content;
+    padding: var(--space-lg);
+}
+
+.holy-aside {
+    grid-area: aside;
+    background-color: var(--color-background-alt);
+    padding: var(--space-md);
+}
+
+.holy-footer {
+    grid-area: footer;
+    /* El contenido del footer usa Flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    background-color: var(--color-text);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .holy-grail-demo {
+        /* Cambia a un layout de una columna en móviles */
+        grid-template-areas:
+            "header"
+            "content"
+            "sidebar"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+    }
+}
+
+/* 
+ * GUÍA VISUAL: Indicadores para demostrar qué tecnología se usa donde
+ * Esto es útil para propósitos didácticos en el proyecto
+ */
+
+.grid-indicator {
+    position: relative;
+}
+
+.grid-indicator::before {
+    content: "Grid";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: rgba(138, 43, 226, 0.2);
+    color: var(--color-primary);
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.flex-indicator {
+    position: relative;
+}
+
+.flex-indicator::before {
+    content: "Flexbox";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: rgba(76, 201, 240, 0.2);
+    color: var(--color-tertiary);
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.combined-indicator {
+    position: relative;
+}
+
+.combined-indicator::before {
+    content: "Grid + Flexbox";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: rgba(255, 107, 107, 0.2);
+    color: var(--color-secondary);
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1;
+}
