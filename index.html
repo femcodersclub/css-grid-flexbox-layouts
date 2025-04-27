@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FemCoders - Grid + Flexbox Layouts</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/flexbox.css">
+    <link rel="stylesheet" href="css/combined.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header: Flexbox para la navegación -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#">FemCoders<span>Lab</span></a>
+            </div>
+            
+            <!-- Menú de navegación usando Flexbox -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#features">Características</a></li>
+                    <li><a href="#examples">Ejemplos</a></li>
+                    <li><a href="#testimonials">Testimonios</a></li>
+                    <li><a href="#pricing">Precios</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-primary">Contacto</a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: Grid para layout principal -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Domina Grid y Flexbox para crear layouts modernos</h1>
+                <p>Aprende a combinar las dos técnicas más potentes de CSS para crear diseños web profesionales y adaptables a cualquier dispositivo.</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary">Explorar ejemplos</a>
+                    <a href="https://github.com/femcodersclub/css-grid-flexbox-layouts" class="btn btn-outline">Ver en GitHub</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-image.svg" alt="Grid y Flexbox combinados">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Características: Grid para layout, Flexbox para cards -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Combinando lo mejor de ambos mundos</h2>
+                <p>Descubre cómo CSS Grid y Flexbox se complementan para resolver cualquier desafío de layout</p>
+            </div>
+            
+            <!-- Grid para distribuir las tarjetas -->
+            <div class="features-grid">
+                <!-- Cada tarjeta usa Flexbox internamente -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/icon-grid.svg" alt="CSS Grid">
+                    </div>
+                    <h3>Grid para estructura</h3>
+                    <p>Perfecto para layouts bidimensionales y estructuras de página completas con posicionamiento preciso.</p>
+                    <a href="https://www.femcodersclub.com/recursos/css/css-grid" class="feature-link">Aprender más sobre Grid</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/icon-flexbox.svg" alt="Flexbox">
+                    </div>
+                    <h3>Flexbox para componentes</h3>
+                    <p>Ideal para distribuciones unidimensionales y alineación flexible de elementos dentro de un contenedor.</p>
+                    <a href="https://www.femcodersclub.com/recursos/css/flexbox" class="feature-link">Aprender más sobre Flexbox</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/icon-combined.svg" alt="Combinados">
+                    </div>
+                    <h3>Combinación estratégica</h3>
+                    <p>Aprende cuándo y cómo usar cada tecnología para crear layouts web eficientes y mantenibles.</p>
+                    <a href="#examples" class="feature-link">Ver ejemplos prácticos</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/icon-responsive.svg" alt="Responsive">
+                    </div>
+                    <h3>Diseño responsivo</h3>
+                    <p>Crea interfaces que se adapten perfectamente a cualquier dispositivo combinando ambas técnicas.</p>
+                    <a href="#" class="feature-link">Probar diferentes tamaños</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de ejemplos: Layout asimétrico con Grid -->
+    <section id="examples" class="examples">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ejemplos prácticos</h2>
+                <p>Explora estos patrones de diseño común implementados con Grid y Flexbox</p>
+            </div>
+            
+            <!-- Layout asimétrico con Grid -->
+            <div class="examples-grid">
+                <!-- Ejemplo 1: Card grande -->
+                <div class="example-card large">
+                    <div class="example-image">
+                        <img src="images/example-dashboard.jpg" alt="Dashboard">
+                    </div>
+                    <div class="example-content">
+                        <h3>Dashboard moderno</h3>
+                        <p>Grid para la estructura general y widgets de diferentes tamaños. Flexbox para el contenido interno de cada widget.</p>
+                        <div class="example-tags">
+                            <span class="tag">Grid</span>
+                            <span class="tag">Flexbox</span>
+                            <span class="tag">Responsivo</span>
+                        </div>
+                        <a href="examples/dashboard/index.html" class="btn btn-sm">Ver ejemplo</a>
+                    </div>
+                </div>
+                
+                <!-- Ejemplo 2: Card mediana -->
+                <div class="example-card">
+                    <div class="example-image">
+                        <img src="images/example-portfolio.jpg" alt="Portfolio">
+                    </div>
+                    <div class="example-content">
+                        <h3>Portfolio creativo</h3>
+                        <p>Grid para la galería de proyectos y Flexbox para el header y los detalles.</p>
+                        <div class="example-tags">
+                            <span class="tag">Grid</span>
+                            <span class="tag">Galería</span>
+                        </div>
+                        <a href="examples/portfolio/index.html" class="btn btn-sm">Ver ejemplo</a>
+                    </div>
+                </div>
+                
+                <!-- Ejemplo 3: Card mediana -->
+                <div class="example-card">
+                    <div class="example-image">
+                        <img src="images/example-product.jpg" alt="Producto">
+                    </div>
+                    <div class="example-content">
+                        <h3>Página de producto</h3>
+                        <p>Flexbox para alineación de elementos y Grid para la galería de imágenes.</p>
+                        <div class="example-tags">
+                            <span class="tag">Flexbox</span>
+                            <span class="tag">Comercio</span>
+                        </div>
+                        <a href="examples/product-page/index.html" class="btn btn-sm">Ver ejemplo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios: Grid para layout, Flexbox para cards -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que dicen nuestras alumnas</h2>
+                <p>Estas desarrolladoras ya dominan Grid y Flexbox gracias a nuestros recursos</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Después de estudiar los recursos de FemCoders sobre Grid y Flexbox, finalmente entendí cuándo usar cada uno. ¡Mis layouts ahora son mucho más limpios y mantenibles!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-1.jpg" alt="María García">
+                        </div>
+                        <div class="author-info">
+                            <h4>María García</h4>
+                            <p>Frontend Developer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"La combinación de Grid para la estructura principal y Flexbox para componentes internos revolucionó mi forma de crear interfaces. ¡Todo es más rápido y lógico ahora!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-2.jpg" alt="Laura Martínez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Laura Martínez</h4>
+                            <p>UI Designer & Developer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Poder ver ejemplos prácticos de cómo combinar Grid y Flexbox me ayudó muchísimo. Ya no tengo que recurrir a frameworks para crear layouts complejos."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-3.jpg" alt="Carmen Rodríguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carmen Rodríguez</h4>
+                            <p>Frontend Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de precios: Grid para layout -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Planes de formación</h2>
+                <p>Elige el plan que mejor se adapte a tus necesidades</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Básico</h3>
+                        <div class="pricing-price">
+                            <span class="price">Gratis</span>
+                            <span class="period">Para siempre</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>Acceso a artículos básicos</li>
+                            <li>Ejemplos de código esenciales</li>
+                            <li>Comunidad de soporte</li>
+                            <li class="not-included">Proyectos prácticos</li>
+                            <li class="not-included">Tutorías personalizadas</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-action">
+                        <a href="#" class="btn btn-outline">Comenzar ahora</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Popular</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="pricing-price">
+                            <span class="price">19€</span>
+                            <span class="period">/ mes</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>Todo lo del plan Básico</li>
+                            <li>Acceso completo a ejemplos</li>
+                            <li>Proyectos prácticos guiados</li>
+                            <li>Feedback personalizado</li>
+                            <li class="not-included">Tutorías personalizadas</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-action">
+                        <a href="#" class="btn btn-primary">Suscribirse</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="pricing-price">
+                            <span class="price">49€</span>
+                            <span class="period">/ mes</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>Todo lo del plan Pro</li>
+                            <li>Acceso anticipado a contenido</li>
+                            <li>Proyectos avanzados</li>
+                            <li>2 sesiones de tutoría al mes</li>
+                            <li>Certificado de finalización</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-action">
+                        <a href="#" class="btn btn-outline">Suscribirse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de contacto: Grid para layout, Flexbox para inputs -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <h2>¿Tienes alguna pregunta?</h2>
+                        <p>Estamos aquí para ayudarte con cualquier duda sobre Grid, Flexbox o diseño web en general</p>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <img src="images/icon-email.svg" alt="Email">
+                            </div>
+                            <div class="method-info">
+                                <h4>Email</h4>
+                                <p>hola@femcodersclub.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <img src="images/icon-twitter.svg" alt="Twitter">
+                            </div>
+                            <div class="method-info">
+                                <h4>Twitter</h4>
+                                <p>@femcodersclub</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <img src="images/icon-discord.svg" alt="Discord">
+                            </div>
+                            <div class="method-info">
+                                <h4>Discord</h4>
+                                <p>femcoders.discord.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-action">
+                            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: Grid para layout general -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>FemCoders<span>Lab</span></h3>
+                    <p>Recursos y formación para mujeres en desarrollo web, con enfoque en las mejores prácticas y tecnologías modernas.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><img src="images/social-twitter.svg" alt="Twitter"></a>
+                        <a href="#" aria-label="Instagram"><img src="images/social-instagram.svg" alt="Instagram"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="images/social-linkedin.svg" alt="LinkedIn"></a>
+                        <a href="#" aria-label="GitHub"><img src="images/social-github.svg" alt="GitHub"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="https://www.femcodersclub.com/recursos/css/flexbox">Guía de Flexbox</a></li>
+                        <li><a href="https://www.femcodersclub.com/recursos/css/css-grid">Guía de CSS Grid</a></li>
+                        <li><a href="#">Combinando Grid y Flexbox</a></li>
+                        <li><a href="#">CSS Avanzado</a></li>
+                        <li><a href="#">Responsive Design</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Comunidad</h4>
+                    <ul>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="#">Mentorías</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Colaborar</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li><a href="#">Sobre nosotras</a></li>
+                        <li><a href="#">Equipo</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos de uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FemCoders Club. Todos los derechos reservados.</p>
+                <p>Hecho con 💜 por la comunidad FemCoders</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

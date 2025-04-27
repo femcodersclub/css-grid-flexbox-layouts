@@ -1,0 +1,371 @@
+/* 
+ * flexbox.css - Componentes basados en Flexbox
+ * FemCoders Club - Grid + Flexbox Layouts
+ * 
+ * Este archivo contiene todos los estilos que utilizan Flexbox
+ * para la alineación y distribución interna de los componentes.
+ */
+
+/* Header - Navegación con Flexbox */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--color-primary);
+}
+
+.main-nav .nav-list {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+/* Toggle del menú móvil */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+/* Hero - Botones con Flexbox */
+.hero-buttons {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+/* Feature Card - Flexbox para alineación vertical */
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    margin-bottom: var(--space-md);
+}
+
+.feature-card h3 {
+    margin-bottom: var(--space-sm);
+}
+
+.feature-card p {
+    margin-bottom: var(--space-md);
+    color: var(--color-text-light);
+    flex-grow: 1;
+}
+
+.feature-link {
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* Example Card - Flexbox para contenido */
+.example-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-background);
+}
+
+.example-content {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.example-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: var(--space-sm) 0;
+}
+
+/* Testimonial Card - Flexbox para alineación */
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-content {
+    margin-bottom: var(--space-md);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.author-info h4 {
+    font-size: var(--font-size-base);
+    margin-bottom: 0;
+}
+
+.author-info p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+/* Pricing Card - Flexbox para distribución vertical */
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pricing-card.featured {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--space-xxs) var(--space-xs);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.pricing-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--space-sm);
+}
+
+.pricing-price .price {
+    font-size: var(--font-size-xxxl);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.pricing-price .period {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+.pricing-features {
+    flex-grow: 1;
+    margin-bottom: var(--space-lg);
+}
+
+.pricing-features ul li {
+    margin-bottom: var(--space-xs);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.pricing-features ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+}
+
+.pricing-features ul li.not-included {
+    color: var(--color-text-lighter);
+    text-decoration: line-through;
+}
+
+.pricing-features ul li.not-included::before {
+    content: "×";
+    color: var(--color-text-lighter);
+}
+
+.pricing-action {
+    text-align: center;
+}
+
+/* Contact Methods - Flexbox para alineación de elementos */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.method-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(138, 43, 226, 0.1);
+}
+
+/* Footer Social Links - Flexbox para íconos */
+.social-links {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(138, 43, 226, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--color-primary);
+}
+
+.social-links a img {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+/* Media Queries para adaptación responsiva */
+@media (max-width: 992px) {
+    /* Ajustes para tablets grandes */
+}
+
+@media (max-width: 768px) {
+    /* Menú móvil */
+    .main-nav {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .main-nav.active {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: var(--color-background);
+        box-shadow: var(--shadow-md);
+        padding: var(--space-md);
+        z-index: 100;
+    }
+    
+    .main-nav.active .nav-list {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    /* Ajustes para otros componentes flexbox */
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Ajustes para móviles */
+    .header-container {
+        padding: var(--space-xs) 0;
+    }
+}
