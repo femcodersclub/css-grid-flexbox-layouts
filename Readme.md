@@ -1,8 +1,9 @@
 # CSS Grid + Flexbox Layouts
 
-![Banner del Proyecto](images/project-banner.jpg)
+![Banner del Proyecto](images/captura.png)
 
 Este proyecto demuestra cómo combinar CSS Grid y Flexbox para crear layouts modernos y responsivos. Forma parte de la serie de recursos educativos de [FemCoders Club](https://www.femcodersclub.com).
+ > ⚠️ Este proyecto es un recurso educativo. Los testimonios, ejemplos y precios mostrados son **ficticios** y tienen fines didácticos únicamente.
 
 ## 📋 Índice
 
@@ -25,9 +26,7 @@ Este proyecto demuestra cómo combinar CSS Grid y Flexbox para crear layouts mod
 
 ## 🚀 Demostración
 
-Visita la [demo en vivo](https://femcodersclub.github.io/css-grid-flexbox-layouts) para explorar el proyecto.
-
-![Vista previa del proyecto](images/preview.jpg)
+Visita la [demo en vivo](https://femcodersclub.github.io/css-grid-flexbox-layouts/) para explorar el proyecto.
 
 ## ✨ Características
 
@@ -172,4 +171,5 @@ Utiliza Grid para distribución de tarjetas y Flexbox para alineación interna.
 
 ## 📚 Recursos Relacionados
 
-- [Guía completa de Flexbox](https://www.femcodersclub.com/recursos/)
+- [Guía de Flexbox de FemCoders Club](https://www.femcodersclub.com/recursos/css/flexbox)
+- [Guía de CSS Grid de FemCoders Club](https://www.femcodersclub.com/recursos/css/css-grid)
