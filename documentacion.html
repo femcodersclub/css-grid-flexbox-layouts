@@ -1,11 +1,359 @@
-# CSS Grid + Flexbox Layouts
-
-Este proyecto muestra cómo combinar CSS Grid y Flexbox para crear layouts modernos y responsivos. Es un recurso complementario a los posts sobre [Flexbox](https://www.femcodersclub.com/recursos/css/flexbox) y [CSS Grid](https://www.femcodersclub.com/recursos/css/css-grid) de FemCoders Club.
-
-## Estructura del Proyecto
-
-```
-css-grid-flexbox-layouts/
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación - CSS Grid + Flexbox Layouts | FemCoders Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colores */
+            --color-primary: #8a2be2;
+            --color-primary-light: #9d4edd;
+            --color-primary-dark: #6a0dad;
+            --color-secondary: #ff6b6b;
+            --color-tertiary: #4cc9f0;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --color-text-lighter: #999999;
+            --color-background: #ffffff;
+            --color-background-alt: #f8f9fa;
+            --color-border: #e0e0e0;
+            --color-code-bg: #f5f5f5;
+            
+            /* Espaciado */
+            --space-xxs: 0.25rem;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-xxl: 5rem;
+            
+            /* Fuentes */
+            --font-family: 'Poppins', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-md: 1.125rem;
+            --font-size-lg: 1.25rem;
+            --font-size-xl: 1.5rem;
+            --font-size-xxl: 2rem;
+            
+            /* Bordes */
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 16px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text);
+            line-height: 1.6;
+            background-color: var(--color-background);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: var(--space-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        .logo {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--color-secondary);
+        }
+        
+        .navigation {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        .navigation a:hover {
+            opacity: 0.8;
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md);
+            flex-grow: 1;
+        }
+        
+        h1 {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--space-lg);
+            color: var(--color-primary);
+        }
+        
+        h2 {
+            font-size: var(--font-size-xl);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-xs);
+            border-bottom: 2px solid var(--color-primary-light);
+            color: var(--color-primary-dark);
+        }
+        
+        p {
+            margin-bottom: var(--space-md);
+        }
+        
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+        
+        ul, ol {
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-lg);
+        }
+        
+        li {
+            margin-bottom: var(--space-xs);
+        }
+        
+        code {
+            font-family: monospace;
+            background-color: var(--color-code-bg);
+            padding: var(--space-xxs) var(--space-xs);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background-color: var(--color-code-bg);
+            padding: var(--space-md);
+            border-radius: var(--border-radius-md);
+            overflow-x: auto;
+            margin-bottom: var(--space-lg);
+            border: 1px solid var(--color-border);
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        .project-structure {
+            font-family: monospace;
+            white-space: pre;
+            line-height: 1.5;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .feature-card {
+            background-color: var(--color-background-alt);
+            border-radius: var(--border-radius-md);
+            padding: var(--space-md);
+            border: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-card h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+            font-size: var(--font-size-md);
+        }
+        
+        .example-section {
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+        
+        .example-item {
+            padding: var(--space-md);
+            border-radius: var(--border-radius-md);
+            border: 1px solid var(--color-border);
+        }
+        
+        .example-item h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .example-item.grid {
+            background-color: rgba(138, 43, 226, 0.05);
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .example-item.flexbox {
+            background-color: rgba(76, 201, 240, 0.05);
+            border-left: 4px solid var(--color-tertiary);
+        }
+        
+        footer {
+            background-color: var(--color-text);
+            color: white;
+            padding: var(--space-lg) 0;
+            margin-top: var(--space-xxl);
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+        
+        .footer-logo {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+        }
+        
+        .footer-logo span {
+            color: var(--color-secondary);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .tecnologias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+        
+        .tecnologia-card {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: var(--color-background-alt);
+            padding: var(--space-sm);
+            border-radius: var(--border-radius-md);
+            border: 1px solid var(--color-border);
+        }
+        
+        .tecnologia-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            font-size: var(--font-size-lg);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: var(--space-sm);
+                padding: var(--space-sm);
+            }
+            
+            .navigation {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                FemCoders<span>Club</span>
+            </div>
+            <nav class="navigation">
+                <a href="index.html">Home</a>
+                <a href="documentacion.html">Documentación</a>
+                <a href="https://github.com/femcodersclub/css-grid-flexbox-layouts">GitHub</a>
+                <a href="https://www.femcodersclub.com">FemCoders Club</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h1>CSS Grid + Flexbox Layouts</h1>
+        
+        <p>Este proyecto muestra cómo combinar CSS Grid y Flexbox para crear layouts modernos y responsivos. Es un recurso complementario a los posts sobre <a href="https://www.femcodersclub.com/recursos/css/flexbox">Flexbox</a> y <a href="https://www.femcodersclub.com/recursos/css/css-grid">CSS Grid</a> de FemCoders Club.</p>
+        
+        <h2>Estructura del Proyecto</h2>
+        
+        <pre class="project-structure">css-grid-flexbox-layouts/
 ├── index.html              # Landing page principal
 ├── css/
 │   ├── styles.css          # Estilos generales
@@ -18,46 +366,203 @@ css-grid-flexbox-layouts/
 └── examples/               # Ejemplos adicionales
     ├── dashboard/          # Ejemplo de dashboard
     ├── portfolio/          # Ejemplo de portafolio
-    └── product-page/       # Ejemplo de página de producto
-```
+    └── product-page/       # Ejemplo de página de producto</pre>
+        
+        <h2>Tecnologías Utilizadas</h2>
+        
+        <div class="tecnologias-grid">
+            <div class="tecnologia-card">
+                <div class="tecnologia-icon">H</div>
+                <div>HTML5</div>
+            </div>
+            <div class="tecnologia-card">
+                <div class="tecnologia-icon">C</div>
+                <div>CSS3 (Grid y Flexbox)</div>
+            </div>
+            <div class="tecnologia-card">
+                <div class="tecnologia-icon">JS</div>
+                <div>JavaScript vanilla</div>
+            </div>
+            <div class="tecnologia-card">
+                <div class="tecnologia-icon">R</div>
+                <div>Diseño responsivo sin frameworks</div>
+            </div>
+        </div>
+        
+        <h2>Características</h2>
+        
+        <p>Este proyecto demuestra:</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Estructura Moderna</h3>
+                <p>Cómo estructurar una landing page moderna con header, hero section, características, testimonios, pricing y footer</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Grid para Layout</h3>
+                <p>Uso de CSS Grid para definir la estructura principal y áreas de contenido</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Flexbox para Componentes</h3>
+                <p>Uso de Flexbox para alineación y distribución de elementos dentro de componentes</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Navegación Responsiva</h3>
+                <p>Implementación de un menú de navegación que se adapta a diferentes dispositivos</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Sistema de Tarjetas</h3>
+                <p>Sistema de tarjetas con Grid para distribución y Flexbox para alineación interna</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Combinación Estratégica</h3>
+                <p>Secciones que combinan ambas tecnologías para aprovechar sus fortalezas</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Media Queries</h3>
+                <p>Implementación de media queries para adaptación a diferentes dispositivos</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Comentarios Detallados</h3>
+                <p>Código comentado para facilitar el aprendizaje y la comprensión</p>
+            </div>
+        </div>
+        
+        <h2>Ejemplos Prácticos</h2>
+        
+        <p>A continuación te mostramos algunos ejemplos de cómo se usa Grid y Flexbox en este proyecto:</p>
+        
+        <div class="example-section">
+            <h3>Estructura General</h3>
+            <div class="example-grid">
+                <div class="example-item grid">
+                    <h3>Grid para Layout</h3>
+                    <pre><code>/* CSS Grid para estructura principal */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
 
-## Tecnologías Utilizadas
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}</code></pre>
+                </div>
+                
+                <div class="example-item flexbox">
+                    <h3>Flexbox para Componentes</h3>
+                    <pre><code>/* Flexbox para componentes internos */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-lg);
+}
 
-- HTML5
-- CSS3 (Grid y Flexbox)
-- JavaScript vanilla
-- Diseño responsivo sin frameworks
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <h3>Combinación Inteligente</h3>
+            <div class="example-grid">
+                <div class="example-item grid">
+                    <h3>Layout Holy Grail</h3>
+                    <pre><code>/* Grid para layout principal */
+.holy-grail-demo {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar content aside"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}</code></pre>
+                </div>
+                
+                <div class="example-item flexbox">
+                    <h3>Navegación Responsiva</h3>
+                    <pre><code>/* Flexbox para navegación */
+.main-nav .nav-list {
+  display: flex;
+  gap: var(--space-lg);
+}
 
-## Características
-
-Este proyecto demuestra:
-
-- Cómo estructurar una landing page moderna con header, hero section, características, testimonios, pricing y footer
-- Uso de Grid para el layout principal
-- Uso de Flexbox para componentes internos
-- Navegación responsiva usando Flexbox
-- Sistema de tarjetas con Grid y contenido alineado con Flexbox
-- Secciones alternadas que usan diferentes combinaciones de Grid y Flexbox
-- Media queries para adaptación responsiva en diferentes dispositivos
-
-## Guía de Implementación
-
-Cada sección del proyecto incluye comentarios detallados explicando qué técnica se está utilizando y por qué, haciendo que este proyecto sea también educativo.
-
-## Cómo Contribuir
-
-1. Haz fork del repositorio
-2. Crea una rama para tu característica (`git checkout -b feature/amazing-feature`)
-3. Haz commit de tus cambios (`git commit -m 'Add some amazing feature'`)
-4. Push a la rama (`git push origin feature/amazing-feature`)
-5. Abre un Pull Request
-
-## Licencia
-
-Distribuido bajo la licencia MIT. Ver `LICENSE` para más información.
-
-## Contacto
-
-FemCoders Club - [femcodersclub.com](https://www.femcodersclub.com)
-
-Link del proyecto: [https://github.com/femcodersclub/css-grid-flexbox-layouts](https://github.com/femcodersclub/css-grid-flexbox-layouts)
+/* Adaptación móvil */
+@media (max-width: 768px) {
+  .main-nav.active .nav-list {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Guía de Implementación</h2>
+        
+        <p>Cada sección del proyecto incluye comentarios detallados explicando qué técnica se está utilizando y por qué, haciendo que este proyecto sea también educativo. Al explorar el código, encontrarás:</p>
+        
+        <ul>
+            <li>Explicaciones de por qué se usó Grid o Flexbox en cada componente</li>
+            <li>Comentarios sobre las estrategias de adaptación responsiva</li>
+            <li>Notas sobre buenas prácticas de CSS</li>
+            <li>Ejemplos de cómo combinar ambas tecnologías estratégicamente</li>
+        </ul>
+        
+        <h2>Cómo Contribuir</h2>
+        
+        <ol>
+            <li>Haz fork del repositorio</li>
+            <li>Crea una rama para tu característica (<code>git checkout -b feature/amazing-feature</code>)</li>
+            <li>Haz commit de tus cambios (<code>git commit -m 'Add some amazing feature'</code>)</li>
+            <li>Push a la rama (<code>git push origin feature/amazing-feature</code>)</li>
+            <li>Abre un Pull Request</li>
+        </ol>
+        
+        <h2>Licencia</h2>
+        
+        <p>Distribuido bajo la licencia MIT. Ver <code>LICENSE</code> para más información.</p>
+        
+        <h2>Contacto</h2>
+        
+        <p>FemCoders Club - <a href="https://www.femcodersclub.com">femcodersclub.com</a></p>
+        
+        <p>Link del proyecto: <a href="https://github.com/femcodersclub/css-grid-flexbox-layouts">https://github.com/femcodersclub/css-grid-flexbox-layouts</a></p>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                FemCoders<span>Club</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.femcodersclub.com/recursos/css/flexbox">Guía de Flexbox</a>
+                <a href="https://www.femcodersclub.com/recursos/css/css-grid">Guía de CSS Grid</a>
+                <a href="https://github.com/femcodersclub">GitHub</a>
+                <a href="https://www.femcodersclub.com/contacto">Contacto</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2025 FemCoders Club. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

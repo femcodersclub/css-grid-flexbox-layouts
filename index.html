@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FemCoders - Grid + Flexbox Layouts</title>
+    <title>FemCoders Club - Grid + Flexbox Layouts</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/flexbox.css">
@@ -11,13 +11,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
     <!-- Header: Flexbox para la navegación -->
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
-                <a href="#">FemCoders<span>Lab</span></a>
+                <a href="#">FemCodersClub<span> Lab</span></a>
             </div>
             
             <!-- Menú de navegación usando Flexbox -->
@@ -32,7 +34,7 @@
             
             <div class="header-actions">
                 <a href="#contact" class="btn btn-primary">Contacto</a>
-                <button class="menu-toggle" id="menuToggle">
+                <button class="menu-toggle" id="menuToggle" title="Toggle menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -53,7 +55,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/hero-image.svg" alt="Grid y Flexbox combinados">
+                <img src="images/grid_flexbox.png" alt="Grid y Flexbox combinados">
             </div>
         </div>
     </section>
@@ -71,7 +73,7 @@
                 <!-- Cada tarjeta usa Flexbox internamente -->
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="images/icon-grid.svg" alt="CSS Grid">
+                        <i class="fas fa-border-all"></i>
                     </div>
                     <h3>Grid para estructura</h3>
                     <p>Perfecto para layouts bidimensionales y estructuras de página completas con posicionamiento preciso.</p>
@@ -80,7 +82,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="images/icon-flexbox.svg" alt="Flexbox">
+                        <i class="fas fa-align-left"></i>
                     </div>
                     <h3>Flexbox para componentes</h3>
                     <p>Ideal para distribuciones unidimensionales y alineación flexible de elementos dentro de un contenedor.</p>
@@ -89,7 +91,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="images/icon-combined.svg" alt="Combinados">
+                        <i class="fas fa-layer-group"></i>
                     </div>
                     <h3>Combinación estratégica</h3>
                     <p>Aprende cuándo y cómo usar cada tecnología para crear layouts web eficientes y mantenibles.</p>
@@ -98,7 +100,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="images/icon-responsive.svg" alt="Responsive">
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Diseño responsivo</h3>
                     <p>Crea interfaces que se adapten perfectamente a cualquier dispositivo combinando ambas técnicas.</p>
@@ -121,7 +123,7 @@
                 <!-- Ejemplo 1: Card grande -->
                 <div class="example-card large">
                     <div class="example-image">
-                        <img src="images/example-dashboard.jpg" alt="Dashboard">
+                        <img src="images/dashboard.png" alt="Dashboard">
                     </div>
                     <div class="example-content">
                         <h3>Dashboard moderno</h3>
@@ -131,14 +133,14 @@
                             <span class="tag">Flexbox</span>
                             <span class="tag">Responsivo</span>
                         </div>
-                        <a href="examples/dashboard/index.html" class="btn btn-sm">Ver ejemplo</a>
+                        <a href="https://femcodersclub.github.io/femcoders-css-grid-examples/dashboard.html" class="btn btn-sm">Ver ejemplo</a>
                     </div>
                 </div>
                 
                 <!-- Ejemplo 2: Card mediana -->
                 <div class="example-card">
                     <div class="example-image">
-                        <img src="images/example-portfolio.jpg" alt="Portfolio">
+                        <img src="images/portafolio.png" alt="Portfolio">
                     </div>
                     <div class="example-content">
                         <h3>Portfolio creativo</h3>
@@ -147,14 +149,14 @@
                             <span class="tag">Grid</span>
                             <span class="tag">Galería</span>
                         </div>
-                        <a href="examples/portfolio/index.html" class="btn btn-sm">Ver ejemplo</a>
+                       
                     </div>
                 </div>
                 
                 <!-- Ejemplo 3: Card mediana -->
                 <div class="example-card">
                     <div class="example-image">
-                        <img src="images/example-product.jpg" alt="Producto">
+                        <img src="images/producto.png" alt="Producto">
                     </div>
                     <div class="example-content">
                         <h3>Página de producto</h3>
@@ -163,7 +165,7 @@
                             <span class="tag">Flexbox</span>
                             <span class="tag">Comercio</span>
                         </div>
-                        <a href="examples/product-page/index.html" class="btn btn-sm">Ver ejemplo</a>
+                       
                     </div>
                 </div>
             </div>
@@ -181,11 +183,11 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Después de estudiar los recursos de FemCoders sobre Grid y Flexbox, finalmente entendí cuándo usar cada uno. ¡Mis layouts ahora son mucho más limpios y mantenibles!"</p>
+                        <p>"Después de estudiar los recursos de FemCoders Club sobre Grid y Flexbox, finalmente entendí cuándo usar cada uno. ¡Mis layouts ahora son mucho más limpios y mantenibles!"</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
-                            <img src="images/testimonial-1.jpg" alt="María García">
+                            <img src="images/marta.png" alt="María García">
                         </div>
                         <div class="author-info">
                             <h4>María García</h4>
@@ -200,7 +202,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
-                            <img src="images/testimonial-2.jpg" alt="Laura Martínez">
+                            <img src="images/laura.png" alt="Laura Martínez">
                         </div>
                         <div class="author-info">
                             <h4>Laura Martínez</h4>
@@ -215,7 +217,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
-                            <img src="images/testimonial-3.jpg" alt="Carmen Rodríguez">
+                            <img src="images/carmen.png" alt="Carmen Rodríguez">
                         </div>
                         <div class="author-info">
                             <h4>Carmen Rodríguez</h4>
@@ -317,36 +319,39 @@
                     </div>
                     
                     <div class="contact-methods">
+
                         <div class="contact-method">
-                            <div class="method-icon">
-                                <img src="images/icon-email.svg" alt="Email">
-                            </div>
-                            <div class="method-info">
-                                <h4>Email</h4>
-                                <p>hola@femcodersclub.com</p>
-                            </div>
+                          <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                          </div>
+                          <div class="method-info">
+                            <h4>Email</h4>
+                            <p>info@femcodersclub.com</p>
+                          </div>
                         </div>
-                        
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <img src="images/icon-twitter.svg" alt="Twitter">
-                            </div>
-                            <div class="method-info">
-                                <h4>Twitter</h4>
-                                <p>@femcodersclub</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <img src="images/icon-discord.svg" alt="Discord">
-                            </div>
-                            <div class="method-info">
-                                <h4>Discord</h4>
-                                <p>femcoders.discord.com</p>
-                            </div>
-                        </div>
-                    </div>
+                      
+                        <a href="https://x.com/FemCodersClub" target="_blank" rel="noopener noreferrer" class="contact-method" aria-label="Visita nuestro perfil de X (Twitter)">
+                          <div class="method-icon">
+                            <i class="fab fa-x-twitter"></i>
+                          </div>
+                          <div class="method-info">
+                            <h4>X</h4>
+                            <p>@femcodersclub</p>
+                          </div>
+                        </a>
+                      
+                        <a href="https://www.instagram.com/femcoders_club/" target="_blank" rel="noopener noreferrer" class="contact-method" aria-label="Visita nuestro perfil en Instagram">
+                          <div class="method-icon">
+                            <i class="fab fa-instagram"></i>
+                          </div>
+                          <div class="method-info">
+                            <h4>Instagram</h4>
+                            <p>@femcoders_club</p>
+                          </div>
+                        </a>
+                      
+                      </div>
+                      
                 </div>
                 
                 <div class="contact-form-container">
@@ -385,13 +390,24 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <h3>FemCoders<span>Lab</span></h3>
+                    <h3>FemCodersClub<span> Lab</span></h3>
                     <p>Recursos y formación para mujeres en desarrollo web, con enfoque en las mejores prácticas y tecnologías modernas.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Twitter"><img src="images/social-twitter.svg" alt="Twitter"></a>
-                        <a href="#" aria-label="Instagram"><img src="images/social-instagram.svg" alt="Instagram"></a>
-                        <a href="#" aria-label="LinkedIn"><img src="images/social-linkedin.svg" alt="LinkedIn"></a>
-                        <a href="#" aria-label="GitHub"><img src="images/social-github.svg" alt="GitHub"></a>
+                        <a href="https://x.com/FemCodersClub" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/femcoders_club/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/100394366" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/femcodersclub" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.femcodersclub.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio web">
+                            <i class="fas fa-globe"></i>
+                        </a>
                     </div>
                 </div>
                 
@@ -401,37 +417,37 @@
                         <li><a href="https://www.femcodersclub.com/recursos/css/flexbox">Guía de Flexbox</a></li>
                         <li><a href="https://www.femcodersclub.com/recursos/css/css-grid">Guía de CSS Grid</a></li>
                         <li><a href="#">Combinando Grid y Flexbox</a></li>
-                        <li><a href="#">CSS Avanzado</a></li>
-                        <li><a href="#">Responsive Design</a></li>
+                      
                     </ul>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Comunidad</h4>
                     <ul>
-                        <li><a href="#">Eventos</a></li>
-                        <li><a href="#">Mentorías</a></li>
-                        <li><a href="#">Discord</a></li>
-                        <li><a href="#">Colaborar</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="https://www.femcodersclub.com/eventos">Eventos</a></li>
+                        <li><a href="https://www.femcodersclub.com/login">Colaborar</a></li>
+                        <li><a href="https://communityinviter.com/apps/femcodersclub/femcoders-club">Slack</a></li>
+                        <li><a href="https://www.femcodersclub.com/blog/recursos">Recursos</a></li>
+                        <li><a href="https://www.femcodersclub.com/blog">Blog</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Compañía</h4>
+                    <h4>Comunidad</h4>
                     <ul>
-                        <li><a href="#">Sobre nosotras</a></li>
-                        <li><a href="#">Equipo</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Política de privacidad</a></li>
-                        <li><a href="#">Términos de uso</a></li>
+                        <li><a href="https://www.femcodersclub.com/femcoders-quienes-somos">Sobre nosotras</a></li>
+                        <li><a href="https://www.femcodersclub.com/equipo">Equipo</a></li>
+                        <li><a href="https://www.femcodersclub.com/contacto">Contacto</a></li>
+                    
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
+                <p class="disclaimer">⚠️ Este sitio es un ejemplo educativo. Los testimonios, precios y ejemplos mostrados son ficticios y tienen fines prácticos únicamente.</p>
                 <p>&copy; 2025 FemCoders Club. Todos los derechos reservados.</p>
-                <p>Hecho con 💜 por la comunidad FemCoders</p>
+                <p>Hecho con 💜 por la comunidad FemCoders Club</p>
+                
             </div>
         </div>
     </footer>
